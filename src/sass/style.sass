@@ -1,0 +1,1347 @@
+@import components/mixin
+
+body
+    margin: 0
+    font-family: Arial
+    overflow-x: hidden
+    color: #121314
+main
+    padding-top: 70px
+    +min-width(920)
+        padding-top: 15px
+.wrapper
+    padding: 0 20px
+    max-width: 1000px
+    margin: 0 auto
+
+//header.pug
+
+
+.header_p
+    margin: 0
+.header_menu
+    +max-width(919) // 915
+        position: fixed
+        z-index: 3
+        top: 0
+        width: 100vw
+    +min-width(920) // 915
+        position: relative
+    background-color: #fff
+    border-bottom: 1px solid #f3f3f4
+.flex
+    display: flex
+    justify-content: space-between
+    padding: 7px 20px
+    margin: 0 auto
+    max-width: 1000px
+.burger
+    position: relative
+    background-color: #fff
+    padding: 0
+    padding-top: 12px
+    padding-right: 20px
+    &:hover
+        cursor: pointer
+.span1,
+.span2,
+.span3
+    position: absolute
+    top: 0
+    height: 2px
+    width: 20px
+    background-color: #000
+    border-radius: 1px
+    transition: 0.3s all ease
+.span2
+    top: 5px
+.span3
+    top: 10px
+.burger_click .span1
+  transform: rotate(45deg)
+  top: 5px
+
+.burger_click .span2
+  display: none
+
+.burger_click .span3
+  transform: rotate(-45deg)
+  top: 5px
+
+.burger_p
+    padding-bottom: 5px
+    display: inline-block
+.logo_a
+    +min-width(768)
+        margin-right: 54px
+.log_in
+    display: inline-block
+    text-decoration: none
+    border: 1px solid #e8e9ea
+    border-radius: 3px
+    padding: 5px 12px
+    margin-right: 15px
+    color: #121314
+    background-color: #e8e9ea
+    font-size: 13px
+    font-family: Arial
+    font-weight: 700
+    transition: 0.3s all ease
+    &:hover
+        background-color: #d3d5d7
+    p 
+        display: inline-block
+        margin-bottom: 5px
+        vertical-align: top
+        margin-top: 5px
+        margin-right: 10px
+.tel_div
+    display: none
+    padding-top: 10px
+    vertical-align: top
+    +min-width(768)
+        display: inline-block
+.header_tel
+    text-decoration: none
+    color: #121314
+    font-size: 13px
+    font-weight: 800
+    vertical-align: top
+    p
+        vertical-align: top
+        padding-top: 4px
+        display: inline-block
+        margin: 0
+        margin-left: 10px
+.header_splatyty_button
+    text-decoration: none
+    color: #121314
+    font-size: 13px
+    font-weight: 700
+    border: 1px solid #121314
+    padding: 9px 12px
+    display: none
+    margin-right: 24px
+    vertical-align: bottom
+    margin-bottom: 1px
+    border-radius: 5px
+    transition: 0.3s all ease
+    &:hover
+        background-color: #ebebeb
+    +min-width(768)
+        display: inline-block
+.burger_open
+    +max-width(920)
+        overflow-y: scroll
+    background-color: #fff
+    z-index: 2
+    position: fixed
+    width: 100vw
+    height: calc(100% - 55px)
+    top: 55px
+    transform: translate(-100%)
+    transition: 0.3s all linear
+    +min-width(920) // 915
+        position: absolute
+        height: auto
+        display: none
+        box-shadow: 0 8px 16px rgba(0,0,0,.16),0 1px 0 hsla(0,0%,44.3%,.08)
+    ul
+        padding: 0
+        margin: 0
+        margin-bottom: 20px
+        +min-width(920) // 915
+            margin-bottom: 0
+            padding: 2px
+            max-width: 1040px
+            margin: 0 auto
+            text-align: right
+        li
+            &:nth-child(even)
+                border: 1px solid #ccc
+                border-left: 0
+                border-right: 0
+            list-style: none
+            font-size: 20px
+            font-weight: 500
+            color: #121314
+            transition: 0.3s all ease
+            +min-width(920)
+                border-radius: 6px
+                &:hover
+                    background-color: #e8e9ea
+                &:hover
+                    ul
+                        display: block
+            +min-width(920) // 915
+                font-size: 13px
+                font-weight: 800
+            +min-width(920) // 915
+                display: inline-block
+            +min-width(920) // 915
+                border: 0 !important
+            ul
+                margin-bottom: 0
+            p
+                cursor: pointer
+                position: relative
+                padding: 10px 20px
+                margin: 0
+                +min-width(920) // 915
+                    padding: 16px 20px
+                &:before
+                    content: ""
+                    position: absolute
+                    border: 2px solid #121314
+                    border-left: 0
+                    border-bottom: 0
+                    width: 8px
+                    height: 8px
+                    top: 15px
+                    right: 20px
+                    transform: rotate(135deg)
+                    transition: 0.3s all ease
+                    +min-width(920) // 915
+                        display: none
+            a
+                text-decoration: none
+                color: #121314
+                display: block
+                padding: 10px 20px
+                +min-width(920) // 915
+                    padding: 16px 20px
+.rus_language
+    // padding-top: 20px
+    display: inline-block
+    vertical-align: top
+    a
+        display: inline-block !important
+        padding: 12px 20px !important
+        // padding-top: 5px !important
+        // padding-bottom: 21px !important
+        // vertical-align: top
+    svg
+        margin-right: 10px
+        vertical-align: top
+        padding-top: 0px
+    p
+        margin: 0
+        padding: 0 !important
+        display: inline-block
+        vertical-align: bottom
+        padding-bottom: 5px !important
+    +max-width(920)
+        display: none
+.burger_open .submenu_ul,
+.burger_open .submenu_ul_2,
+.burger_open .submenu_ul_3
+    display: none
+    +min-width(920)
+        // position: absolute
+        background-color: #fff
+        border: 2px solid #c8cbcd
+        border-radius: 6px
+        padding: 14px 0
+    padding-left: 35px
+    padding-right: 20px
+    li
+        border: 0 !important
+        border-bottom: 1px solid #ccc !important
+        border-radius: 0
+        +min-width(920)
+            display: block
+            text-align: left
+            border: 0 !important
+            &:hover
+                background-color: #c8cbcd
+        &:last-child
+            border: 0 !important
+        a
+            +min-width(920)
+                padding: 11px 20px
+.menu_open
+    display: block
+    transition: 0.3s all linear
+    transform: translate(0%)
+    +min-width(920) // 915
+        display: block
+.submenu_ul_1_open,
+.submenu_ul_2_open,
+.submenu_ul_3_open
+    +max-width(920)
+        display: block !important
+.li1_click,
+.li2_click,
+.li3_click
+    &:before
+        transform: rotate(315deg) !important
+
+.open_menu_s_kredit_a
+    text-decoration: none
+    display: block
+    background-color: #0462cf
+    text-align: center
+    color: #fff
+    font-size: 17px
+    padding: 11px 16px
+    font-weight: 700
+    +min-width(920) // 915
+        display: none
+
+.button_wrapper
+    text-align: center
+    padding: 0 20px
+    +min-width(920) // 915
+        display: none
+    a
+        display: block
+        text-decoration: none
+        color: #121314
+        background-color: #e8e9ea
+        border-radius: 6px
+        font-weight: 700
+        padding: 7px 12px
+        font-size: 13px
+        padding-right: 20px
+        svg
+            margin-right: 10px
+        p
+            margin: 0
+            padding: 0
+            display: inline-block
+            vertical-align: bottom
+            padding-bottom: 5px
+.download_buttons_flex
+    display: flex
+    justify-content: center
+    margin: 10px 0
+    +min-width(920) // 915
+        display: none
+.app_store
+    padding: 20px 68px
+    background-image: url(../img/download-app-store.png)
+    background-repeat: no-repeat
+    margin-right: 16px
+.play_market
+    padding: 20px 68px
+    background-image: url(../img/download-play-market.png)
+    background-repeat: no-repeat
+.tel_button
+    display: inline-block
+    background-color: #e8e9ea
+    font-weight: 700
+    font-size: 17px
+    color: #121314
+    text-decoration: none
+    padding: 9px 16px
+    border-radius: 6px
+    svg
+        margin-right: 10px
+    p
+        margin: 0
+        padding: 0
+        display: inline-block
+        vertical-align: bottom
+        padding-bottom: 5px
+.tel_button_div
+    padding-top: 12px
+    text-align: center
+    +min-width(920) // 915
+        display: none
+.tel_time
+    text-align: center
+    color: #42464a
+    font-size: 18px
+    font-weight: 400
+    +min-width(920) // 915
+        display: none
+
+.submenu_top
+    +min-width(920)
+        position: absolute
+        padding-top: 7px
+
+
+
+//index.pug
+
+
+
+
+.splatyty_kredit
+    position: relative
+    font-weight: 700
+    color: #0462cf
+    text-decoration: none
+    display: inline-block
+    margin-bottom: 15px
+    +min-width(768)
+        display: none
+    &:before
+        position: absolute
+        content: ""
+        border: 2px solid #0462cf
+        border-left: 0
+        border-bottom: 0
+        height: 8px
+        width: 8px
+        top: 50%
+        right: -20px
+        transform: rotate(45deg) translate(-80%)
+.text_center
+    text-align: center
+.main_green_gradient_mobile
+    display: flex
+    justify-content: space-between
+    background-image: linear-gradient(#B0F7CC, #4ECE7C)
+    border-radius: 10px
+    padding: 20px
+    +min-width(1050)
+        display: none
+    p
+        font-size: 22px
+        color: #333
+        font-weight: 600
+        width: 50%
+        margin: 0
+        +min-width(448)
+            padding-top: 20px
+        +min-width(520)
+            width: auto
+            padding-right: 20px
+.main_green_gradient_mobile_img
+    background-image: url(../img/miloan_mobile1.png)
+    background-repeat: no-repeat
+    +min-width(365)
+        background-size: contain
+        padding: 70px 100px
+    background-size: 150px
+    padding: 30px 77px
+.main_green_gradient_desktop
+    display: none
+    padding: 40px
+    background-image: linear-gradient(#B0F7CC, #4ECE7C)
+    border-radius: 12px
+    max-width: 920px
+    margin: 0 auto
+    +min-width(1050)
+        display: block
+        margin-bottom: 130px
+    p
+        color: #333333
+        font-size: 36px
+        font-weight: 600
+        max-width: 50%
+        margin-bottom: 14px
+    .main_green_gradient_desktop_p2
+        font-size: 28px
+        font-weight: 500
+        margin: 0
+        padding-bottom: 40px
+.main_green_gradient_desktop_img
+    background-image: url(../img/miloan_desktop1.png)
+    padding: 160px
+    background-repeat: no-repeat
+    background-size: 400px
+
+// input type range
+
+.input_type_range_i1,
+.input_type_range_i2
+    background: transparent
+    display: block
+    //   margin-bottom: 20px
+    /* cursor: pointer */
+    width: 100%
+
+.input_type_range_i1
+    position: relative
+    width: 67%
+    +min-width(343)
+        width: 68%
+    +min-width(477)
+        width: 69%
+    
+
+.input_type_range_div
+    display: inline-block
+    position: relative
+    width: 100%
+    padding-bottom: 10px
+
+.input_type_range_span1
+    position: absolute
+    height: 6px
+    width: 30%
+    transform: translateY(-60%) !important
+    -moz-transform: translateY(-30%) !important
+    background-color: #d98f91
+    top: 32%
+    transform: translateY(-30%)
+    right: 0px
+    z-index: 1
+    /* border-radius: 15px */
+
+.input_type_range_span2
+    position: absolute
+    height: 6px
+    width: 6px
+    background-color: #de2d2d
+    border: 1px solid #fff
+    border-radius: 50%
+    top: 32%
+    transform: translateY(-60%)
+    -moz-transform: translateY(-35%)
+    right: 30%
+    z-index: 1
+    border-radius: 15px
+
+.input_type_range_i1::-moz-range-thumb,
+.input_type_range_i2::-moz-range-thumb,
+.input_type_range_i1::-webkit-range-thumb,
+.input_type_range_i2::-webkit-range-thumb
+    border: 6px solid #de2d2d
+    border-radius: 50%
+    background-color: #fff
+    width: 32px
+    height: 32px
+
+.input_type_range_i1::-moz-range-thumb,
+.input_type_range_i2::-moz-range-thumb
+    width: 22px
+    height: 22px
+
+.input_type_range_i1::-moz-range-track,
+.input_type_range_i2::-moz-range-track,
+.input_type_range_i1::-webkit-range-track,
+.input_type_range_i2::-webkit-range-track
+    height: 6px
+    background-color: #ccc
+    border-radius: 15px
+
+.input_type_range_i1::-moz-range-progress,
+.input_type_range_i2::-moz-range-progress
+    background-color: #24ac6b
+    height: 6px
+    border-radius: 15px
+
+
+/* chromium */
+
+
+.input_type_range_i1,
+.input_type_range_i2
+    -webkit-appearance: none
+
+.input_type_range_i1::-webkit-slider-thumb,
+.input_type_range_i2::-webkit-slider-thumb
+    -webkit-appearance: none
+
+.input_type_range_i1:focus,
+.input_type_range_i2:focus
+    outline: none
+
+.input_type_range_i1::-webkit-slider-thumb,
+.input_type_range_i2::-webkit-slider-thumb
+    border: 6px solid #de2d2d
+    border-radius: 50%
+    background-color: #fff
+    width: 32px
+    height: 32px
+    margin-top: -14px
+
+.input_type_range_i1::-webkit-slider-runnable-track,
+.input_type_range_i2::-webkit-slider-runnable-track
+    height: 6px
+    background-color: #24ac6b
+    border-radius: 15px
+
+.input_type_range_text_1
+    font-size: 32px
+    font-weight: 600
+    text-align: center
+    margin: 0
+    padding-top: 16px
+    padding-bottom: 15px
+
+.input_type_range_text_first
+    +min-width(1050)
+        padding-top: 32px
+
+.input_type_range_text_2
+    padding: 0
+
+.input_type_range_min_max_price_and_time
+    display: flex
+    justify-content: space-between
+    p
+        display: inline-block
+        margin: 0
+        font-size: 16px
+        font-weight: 400
+        color: #5f656a
+
+.get_money_green_button
+    margin: 0 auto
+    display: block
+    text-decoration: none
+    background-color: #24ac6b
+    color: #fff
+    font-size: 17px
+    font-weight: 700
+    border-radius: 6px
+    padding-top: 14px
+    padding-bottom: 14px
+    transition: 0.3s all ease
+    +min-width(767)
+        &:hover
+            background-color: #1d8a56
+
+.text_align_center
+    text-align: center
+.padding_top_16
+    padding-top: 16px
+    padding-bottom: 10px
+
+// table
+
+.input_type_range_form_table
+    width: 100%
+    +min-width(1050)
+        padding-left: 32px
+        padding-right: 32px
+    td
+        padding: 4px 0
+
+.input_type_range_form_table_td_1
+    font-size: 15px
+    font-weight: 400
+
+.input_type_range_form_table_td_2_o1
+    font-size: 20px
+    font-weight: 600
+
+.input_type_range_form_table_td_2_o2
+    font-size: 15px
+    font-weight: 400
+    opacity: 0.5
+.input_type_range_form_table_td_2
+    text-align: right
+
+.text_under_input_type_range_form_table
+    font-size: 14px
+    color: #5f656a
+    margin: 0
+    padding-bottom: 18px
+    +min-width(767)
+        padding-bottom: 90px
+    
+    +min-width(1050)
+        padding-left: 32px
+        padding-right: 32px
+        padding-bottom: 32px
+    a
+        text-decoration: none
+        color: #0462cf
+        &:hover
+            text-decoration: underline
+
+.hr_under_padding_on_desktop
+    border: 0
+    border-bottom: 1px solid #f3f3f4
+    display: none
+    +min-width(767)
+        display: block
+
+.padding_on_desktop
+    +min-width(767)
+        padding-left: 32px
+        padding-right: 32px
+
+.position_relative_div
+    position: relative
+    margin: 0 auto
+    max-width: 1000px
+
+.calculator
+    +min-width(1050)
+        position: absolute
+        top: 25px
+        right: 40px
+        background-color: #fff
+        width: 385px
+        border-radius: 12px
+
+.plata_za_kredit
+    background-image: url(../img/i.jpg)
+    background-repeat: no-repeat
+    background-position: center right
+    background-size: 15px
+    padding: 8px
+    padding-left: 10px
+
+.plata_za_kredit:hover+.plata_za_kredit_i_text
+    display: block !important
+
+.plata_za_kredit_td
+    position: relative
+    p
+        display: inline-block
+        margin: 0
+    div
+        display: inline-block
+        vertical-align: bottom
+
+.plata_za_kredit_i_text
+    display: none !important
+    position: absolute
+    background-color: #0462cf
+    border-radius: 16px
+    padding: 12px
+    width: 300px
+    z-index: 2
+    left: 0
+    bottom: 50px
+    &:before
+        content: ""
+        position: absolute
+        border-bottom: 10px solid #0462cf
+        border-left: 10px solid transparent
+        border-right: 10px solid transparent
+        transform: rotate(45deg)
+        height: 10px
+        width: 10px
+        bottom: -7px
+        left: 110px
+
+    p
+        color: #fff
+        margin: 0
+        font-size: 15px
+        line-height: 24px
+
+// .download_app_mobile
+
+.download_app_mobile
+    padding: 40px 20px
+    background-color: #ecfbf4
+    text-align: center
+    padding-top: 45px
+    margin-bottom: 40px
+    +min-width(767)
+        display: none
+
+.download_app_mobile_image
+    display: inline-block
+    background-image: url(../img/miloan_logo.jpg)
+    padding: 22.5px
+    background-repeat: no-repeat
+    background-size: 45px
+
+.download_app_mobile_text
+    font-size: 24px
+    font-weight: 600
+    color: #121314
+    margin: 0
+    padding-top: 20px
+    padding-bottom: 24px
+
+.download_app_mobile_button
+    position: relative
+    display: inline-block
+    font-weight: 800
+    color: #121314
+    text-decoration: none
+    border: 2px solid #121314
+    border-radius: 6px
+    padding: 12px 57px
+    padding-left: 74px
+    padding-right: 34px
+    font-size: 17px
+    &:before
+        content: ""
+        position: absolute
+        height: 25px
+        width: 25px
+        background-image: url(../img/play_market_logo.jpg)
+        background-repeat: no-repeat
+        background-size: 18px
+        left: 40px
+        top: 55%
+        transform: translateY(-50%)
+
+// .download_app_desktop
+
+.download_app_desktop
+    display: none
+    background-color: #ecfbf4
+    padding: 52px 20px
+    margin-bottom: 40px
+    +min-width(767)
+        display: block
+
+.download_app_desktop_flex
+    display: flex
+    justify-content: space-between
+    padding-left: 250px
+    position: relative
+    max-width: 750px
+    margin: 0 auto
+
+.download_app_desktop_text_1
+    font-size: 26px
+    font-weight: 600
+    margin: 0
+    padding-bottom: 12px
+
+.download_app_desktop_text_2
+    font-size: 20px
+    font-weight: 400
+    margin: 0
+.download_app_desktop_flex_buttons
+    p
+        margin: 0
+        &:first-child
+            padding-top: 20px
+            margin-bottom: 30px
+    a
+        margin: 0
+        padding: 11px 68px
+
+.download_app_desktop_flex_img_1
+    position: absolute
+    left: 0
+    bottom: -52px
+    background-image: url(../img/app-download-phone.png)
+    background-repeat: no-repeat
+    height: 240px
+    width: 147px
+
+.download_app_desktop_flex_img_2
+    position: absolute
+    left: 70px
+    bottom: -25px
+    background-image: url(../img/qr.jpg)
+    background-repeat: no-repeat
+    background-position: center center
+    height: 145px
+    width: 145px
+    background-color: #fff
+    border-radius: 16px
+    box-shadow: 0 16px 16px -9px rgba(0,0,0,.24),0 50px 48px -42px rgba(0,0,0,.4)
+
+.download_app_desktop_flex_texts
+    max-width: 450px
+    margin-right: 5px
+
+// .asks_and_answers
+
+.asks_and_answers
+    margin: 0
+    font-size: 22px
+    font-weight: 600
+    padding-bottom: 22px
+
+.asks_and_answers_ul
+    padding-left: 0
+    margin: 0
+    margin-bottom: 40px
+    li
+        list-style: none
+        border-bottom: 1px solid #c8cbcd
+        cursor: pointer
+        &:last-child
+            border: 0
+
+.asks_and_answers_question_1,
+.asks_and_answers_question_2,
+.asks_and_answers_question_3,
+.asks_and_answers_question_4,
+.asks_and_answers_question_5,
+.asks_and_answers_question_6,
+.asks_and_answers_question_7,
+.asks_and_answers_question_8
+            font-size: 18px
+            font-weight: 600
+            padding: 15px 0
+            padding-right: 26px
+            margin: 0
+            position: relative
+            &:before
+                position: absolute
+                content: ""
+                top: 50%
+                right: 0px
+                height: 2px
+                width: 16px
+                background-color: #121314
+                border-radius: 2px
+                transition: 0.3s all ease
+                transform: translateY(-50%)
+            &:after
+                position: absolute
+                content: ""
+                top: 50%
+                right: 7px
+                height: 16px
+                width: 2px
+                background-color: #121314
+                border-radius: 2px
+                transition: 0.3s all ease
+                transform: translateY(-50%)
+
+
+.asks_and_answers_answer_1,
+.asks_and_answers_answer_2,
+.asks_and_answers_answer_3,
+.asks_and_answers_answer_4,
+.asks_and_answers_answer_5,
+.asks_and_answers_answer_6,
+.asks_and_answers_answer_8,
+.asks_and_answers_answer_7
+    &:before
+        transform: rotate(90deg)
+        width: 0
+        right: 7px
+        // top: 49%
+    &:after
+        top: 43.5%
+        transform: rotate(90deg) translateX(-50%)
+
+.asks_and_answers_question_answer
+    p
+        font-size: 16px
+        font-weight: 400
+        padding-bottom: 0
+        margin: 0
+    a
+        font-size: 16px
+        font-weight: 400
+        display: inline-block
+        text-decoration: none
+        margin: 0
+        padding: 0
+        color: #0462cf
+.asks_and_answers_question_answer
+    height: 0
+    overflow: hidden
+    transition: 0.3s all ease
+.asks_and_answers_answer_1+.asks_and_answers_question_answer,
+.asks_and_answers_answer_2+.asks_and_answers_question_answer,
+.asks_and_answers_answer_3+.asks_and_answers_question_answer,
+.asks_and_answers_answer_4+.asks_and_answers_question_answer,
+.asks_and_answers_answer_5+.asks_and_answers_question_answer,
+.asks_and_answers_answer_6+.asks_and_answers_question_answer,
+.asks_and_answers_answer_7+.asks_and_answers_question_answer,
+.asks_and_answers_answer_8+.asks_and_answers_question_answer
+    // height: 90px
+    height: auto
+    padding-bottom: 15px
+
+.detalnishe_pro_pogashennya_p
+    padding-top: 10px
+
+.detalnishe_pro_pogashennya
+    display: block !important
+    background-color: #24AC6B
+    border-radius: 6px
+    color: #fff !important
+    text-align: center
+    padding: 11px 0 !important
+
+// cikavo_znaty
+
+.cikavo_znaty_div
+    +min-width(768)
+        display: flex
+        justify-content: space-between
+.cikavo_znaty_p
+    margin: 0
+    font-size: 22px
+    font-weight: 600
+    margin-bottom: 24px
+    +min-width(768)
+        margin-bottom: 44px
+        font-size: 26px
+
+.cikavo_znaty_item_a_detalnishe
+    display: none !important
+    +min-width(768)
+        display: inline-block !important
+    position: relative
+    cursor: pointer
+    display: inline-block
+    font-size: 17px
+    font-weight: 700
+    background-color: #e8e9ea
+    padding: 14px 17px
+    border-radius: 6px
+    transition: 0.3s all ease
+    &:hover
+        background-color: #d3d5d7 !important
+
+.cikavo_znaty_item_1
+    +min-width(768)
+        margin-right: 0 !important
+        margin-left: 0 !important
+        margin-bottom: 30px !important
+        display: flex
+        justify-content: space-between
+        img
+            width: 50%
+            margin-right: 30px
+        &:before
+            height: calc(100% - 16px) !important
+            right: 48% !important
+            top: 0 !important
+        div
+            width: 46% !important
+        
+.cikavo_znaty_item1_a
+    +min-width(768)
+        display: none
+
+.cikavo_znaty_item1_date
+    +min-width(768)
+        margin-bottom: 24px
+
+.cikavo_znaty_item
+    display: block
+    position: relative
+    margin-bottom: 16px
+    +min-width(768)
+        margin-right: 15px
+        margin-left: 15px
+        &:before
+            bottom: 0
+            right: -15px
+            height: 100%
+            width: 2px
+    img
+        width: 100%
+        border-radius: 6px
+        display: block
+        margin-bottom: 16px
+    &:before
+        position: absolute
+        content: ""
+        width: 100%
+        height: 2px
+        background-color: #c8cbcd
+        +max-width(767)
+            left: 0
+        bottom: -10px
+    &:last-child
+        &:before
+            display: none
+        +min-width(768)
+            margin-right: 0 !important
+    &:nth-child(1)
+        +min-width(768)
+            margin-left: 0 !important
+        
+
+.cikavo_znaty_item_absolute_a
+    position: absolute
+    height: 100%
+    width: 100%
+
+.cikavo_znaty_item_title
+    font-size: 20px
+    font-weight: 600
+    margin: 0
+    margin-bottom: 8px
+
+.cikavo_znaty_item_date
+    margin: 0
+    font-size: 14px
+    color: #393c3f
+    font-weight: 400
+
+.cikavo_znaty_item_text
+    font-size: 16px
+    font-weight: 400
+    margin: 0
+
+.cikavo_znaty_item_a
+    color: #24ac6b
+    font-size: 16px
+    font-weight: 400
+    margin: 0
+    text-decoration: none
+
+.cikavo_znaty_more_posts
+    display: block
+    text-decoration: none
+    margin: 0
+    background-color: #e8e9ea
+    font-size: 13px
+    font-weight: 800
+    border-radius: 6px
+    text-align: center
+    color: #121314
+    padding: 16px 0
+    transition: 0.3s all ease
+    margin-bottom: 40px
+    +min-width(768)
+        display: inline-block
+        padding: 16px 17px
+        &:hover
+            background-color: #d3d5d7
+
+.cikavo_znaty_more_posts_div
+    text-align: center
+
+// credit_types
+
+.credit_types_title
+    font-size: 22px
+    font-weight: 600
+    margin: 0
+    margin-bottom: 20px
+    +min-width(768)
+        font-size: 26px
+
+.credit_types_div
+    height: 280px
+    overflow: hidden
+    position: relative
+    padding-bottom: 30px
+    margin-bottom: 10px
+    +min-width(768)
+        height: 180px
+    a
+        display: inline-block
+        text-decoration: none
+        font-size: 18px
+        font-weight: 500
+        color: #121314
+        background-color: #e8e9ea
+        border-radius: 26px
+        padding: 7px 10px
+        text-align: center
+        margin: 0
+        margin-right: 10px
+        margin-bottom: 8px
+        &:hover
+            background-color: #e0e0e0
+
+.credit_types_gradient
+    position: absolute
+    top: 40%
+    left: 0
+    width: 100%
+    height: 60%
+    background: linear-gradient(rgba(255, 255, 255, 0.5), #fff)
+
+.credit_types_div_height_auto
+    height: auto !important
+
+.credit_types_gradient_none
+    display: none
+
+.credit_types_button
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+    height: 24px
+    width: 24px
+    background-color: #eee
+    bottom: 40px
+    background-image: url(../img/pointer.jpg)
+    background-repeat: no-repeat
+    background-position: center center
+    background-size: 15px
+    border-radius: 6px
+    cursor: pointer
+
+.credit_types_button_transform
+    transform: rotate(180deg) translateX(50%)
+    bottom: 0px
+
+// seo_text
+
+.seo_text_div
+    padding: 40px 0
+    background-color: #eef9f4
+    h1
+        font-size: 26px
+        font-weight: 600
+        margin: 0
+        +min-width(768)
+            font-size: 36px
+    h2
+        font-size: 24px
+        font-weight: 600
+        margin: 0
+        padding-top: 16px
+        +min-width(768)
+            font-size: 30px
+    h3
+        font-size: 22px
+        font-weight: 600
+        margin: 0
+        padding-top: 10px
+        +min-width(768)
+            font-size: 26px
+    p
+        margin: 8px 0
+        font-size: 16px
+        font-weight: 400
+        line-height: 24px
+    ul
+        margin: 25px 0
+        padding-left: 25px
+    li
+        list-style: none
+        position: relative
+        margin: 0
+        padding: 0
+        &:before
+            content: ""
+            position: absolute
+            left: -15px
+            top: 7px
+            height: 7px
+            width: 7px
+            border-radius: 50%
+            background-color: #24ac6b
+
+.seo_text_number_ul
+    li
+        list-style: number
+        &:before
+            display: none
+
+// footer
+
+.footer_div
+    background-color: #0c3b3f
+    padding-top: 27px
+    padding-bottom: 80px
+    text-align: center
+    +min-width(920)
+        padding-top: 48px
+        padding-bottom: 20px
+
+.footer_logo
+    display: inline-block
+    padding: 15px 60px
+    background-image: url(../img/footer_logo.jpg)
+    background-repeat: no-repeat
+    background-size: 114px
+    margin-bottom: 16px
+    +min-width(920)
+        background-size: 160px
+        padding: 20px 80px
+
+.footer_p
+    font-size: 16px
+    line-height: 24px
+    color: #fff
+    margin: 0
+    margin-bottom: 24px !important
+    +min-width(920)
+        opacity: 0.8
+        font-size: 12px
+        max-width: 225px
+        line-height: 18px
+    a
+        color: #0462cf
+        +min-width(920)
+            font-size: 12px
+            line-height: 18px
+
+.footer_hr
+    border: 0
+    border-bottom: 1px solid #5f656a
+    margin: 0
+    padding: 0
+    margin-bottom: 16px
+    +min-width(920)
+        border-color: #fff
+
+.footer_copyright
+    color: #fff
+    font-size: 14px
+    font-weight: 500
+    margin: 0
+
+.footer_col_1
+    +min-width(920)
+        text-align: left
+    p
+        display: inline-block
+        margin: 0
+        vertical-align: bottom
+        padding-bottom: 5px
+    svg
+        margin-right: 10px
+    div
+        margin-bottom: 16px
+
+.footer_col_1_last_div
+    margin-bottom: 24px !important
+
+.footer_tel,
+.footer_mail,
+.footer_time
+    display: none
+    color: #fff
+    font-size: 17px
+    font-weight: 400
+    text-decoration: none
+    margin: 0
+    +min-width(920)
+        display: inline-block
+
+.footer_tel_div,
+.footer_mail_div,
+.footer_col_1_last_div
+    display: none
+    +min-width(920)
+        display: block
+
+.footer_cols_flex
+    display: flex
+    justify-content: space-between
+
+.footer_col_2
+    display: none
+    text-align: left
+    margin-bottom: 20px
+    +min-width(920)
+        display: block
+    ul
+        margin: 0
+        padding-left: 0
+        li
+            list-style: none
+            margin-bottom: 24px
+            a
+                color: #fff
+                font-size: 16px
+                font-weight: 400
+                text-decoration: none
+                margin: 0
+
+.footer_col_3
+    display: none
+    text-align: left
+    +min-width(920)
+        display: block
+    p
+        color: #fff
+        font-size: 17px
+        font-weight: 400
+        text-decoration: none
+        margin: 0
+        margin-bottom: 36px
+    a
+        padding: 12px 68px
+
+.footer_col_1,
+.footer_col_2,
+.footer_col_3
+    +min-width(920)
+        width: 277px
